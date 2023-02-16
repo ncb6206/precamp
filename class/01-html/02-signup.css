@@ -1,0 +1,87 @@
+.formlayout {
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 670px;
+  height: 960px;
+  left: 625px;
+  top: 60px;
+
+  background: #ffffff;
+  border: 1px solid #aacdff;
+  box-shadow: 7px 7px 39px rgba(0, 104, 255, 0.25);
+  border-radius: 20px;
+}
+
+.formlayoutin {
+  width: 470px;
+  height: 818px;
+  left: 725px;
+  top: 132px;
+}
+
+h1 {
+  width: 466px;
+  height: 94px;
+  left: 725px;
+  top: 132px;
+
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 47px;
+
+  color: #0068ff;
+}
+
+.forminput {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.forminput > span {
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #797979;
+}
+
+.forminput > input {
+  border: 1px solid #0068ff;
+  border-width: 0 0 1px 0;
+}
+
+.input2yong {
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  border-radius: 3px;
+}
+
+.registerform {
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 400;
+  color: #0068ff;
+  font-size: 18px;
+
+  padding: 1rem 12rem;
+  background: #ffffff;
+  border: 1px solid #0068ff;
+  border-radius: 10px;
+}
+
+.gender {
+  display: flex;
+  justify-content: center;
+}
