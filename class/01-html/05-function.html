@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <script>
+      const changenum = () => {
+        let rannumber = String(Math.floor(Math.random() * 100000));
+        let rgb = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(
+          Math.random() * 256
+        )},${Math.floor(Math.random() * 256)})`;
+        document.getElementById("sixnum").innerText = rannumber.padStart(6, "0");
+        document.getElementById("sixnum").style.color = rgb;
+      };
+    </script>
+  </head>
+  <body>
+    <div id="sixnum">000000</div>
+    <button onclick="changenum()">인증번호 전송</button>
+  </body>
+</html>
