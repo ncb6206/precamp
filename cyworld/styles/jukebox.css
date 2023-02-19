@@ -16,12 +16,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 .wrapper__header {
   width: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .wrapper__title {
@@ -43,15 +42,14 @@ body {
 
 .divideLine {
   width: 100%;
-  margin: 10px 0;
   border: 1px solid gray;
 }
 
 .albumWrapper {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding-top: 12px;
 }
 
 .album__element {
@@ -62,21 +60,75 @@ body {
   padding-top: 10px;
 }
 
-.album__title {
-  font-size: 11px;
-  font-weight: 700;
-  color: #0f465e;
-  padding-top: 10px;
+.album__element .album-thumbnail {
+  width: 120px;
+  height: 120px;
 }
 
-.album__singer {
-  font-size: 10px;
+.album__element .album-songtitle {
+  font-size: 11px;
+  font-weight: bold;
   font-weight: 700;
-  color: #999999;
+  color: #0f465e;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.album__element .album-artist {
+  font-size: 10px;
+  font-weight: bold;
+  font-weight: 700;
+  color: gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .wrapper__body {
   width: 100%;
-  display: flex;
-  flex-direction: column;
+}
+
+.albumTable {
+  width: 100%;
+  border-spacing: 0px;
+  padding-top: 8px;
+}
+
+.albumTable th {
+  height: 20px;
+  font-size: 10px;
+  font-weight: bold;
+  color: gray;
+  background-color: #eeeeee;
+  padding-top: 1px;
+  border-top: 1px solid gray;
+  border-bottom: 1px dashed gray;
+}
+
+.albumTable td {
+  height: 20px;
+  font-size: 10px;
+  color: #0f465e;
+  border-bottom: 1px dashed gray;
+}
+
+.album-table-checkbox {
+  width: 5%;
+  text-align: center;
+}
+
+.album-table-number {
+  width: 10%;
+  text-align: center;
+}
+
+.album-table-song {
+  width: 45%;
+  text-align: left;
+}
+
+.album-table-artist {
+  width: 30%;
+  text-align: left;
 }
