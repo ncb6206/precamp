@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>Final</title>
+    <title>코드캠프 회원가입</title>
     <link rel="stylesheet" href="./final.css" />
     <script src="./final.js"></script>
   </head>
@@ -11,31 +11,57 @@
         <div class="wrapper__header">코드캠프 회원가입</div>
         <div class="wrapper__body">
           <div class="body__input">
-            <input
-              class="inputForm"
-              type="email"
-              id="email"
-              placeholder="이메일을 입력해 주세요."
-            />
-            <input class="inputForm" type="text" id="text" placeholder="이름을 입력해 주세요." />
-            <input
-              class="inputForm"
-              type="password"
-              id="password"
-              placeholder="비밀번호를 입력해 주세요."
-            />
-            <input
-              class="inputForm"
-              type="password"
-              id="passwordConfirm"
-              placeholder="비밀번호를 다시 입력해 주세요."
-            />
+            <div class="input__login">
+              <input
+                class="inputForm"
+                type="email"
+                id="email"
+                placeholder="이메일을 입력해 주세요."
+              />
+              <div class="error" id="emailError"></div>
+            </div>
+            <div class="input__login">
+              <input class="inputForm" type="text" id="name" placeholder="이름을 입력해 주세요." />
+              <div class="error" id="nameError"></div>
+            </div>
+            <div class="input__login">
+              <input
+                class="inputForm"
+                type="password"
+                id="password"
+                placeholder="비밀번호를 입력해 주세요."
+              />
+              <div class="error" id="passwordError"></div>
+            </div>
+            <div class="input__login">
+              <input
+                class="inputForm"
+                type="password"
+                id="passwordConfirm"
+                placeholder="비밀번호를 다시 입력해 주세요."
+              />
+              <div class="error" id="passwordConfirmError"></div>
+            </div>
           </div>
           <div class="body__auth">
             <div class="auth__phoneNumber">
-              <input type="text" id="p1" maxlength="3" oninput="changeFocus1()" /> -
-              <input type="text" id="p2" maxlength="4" oninput="changeFocus2()" /> -
-              <input type="text" id="p3" maxlength="4" oninput="setAuth()" />
+              <input
+                type="text"
+                id="p1"
+                maxlength="3"
+                onchange="changeFocus1()"
+                onkeyup="onchange()"
+              />
+              -
+              <input
+                type="text"
+                id="p2"
+                maxlength="4"
+                onchange="changeFocus2()"
+                onkeyup="onchange()"
+              />
+              -
+              <input type="text" id="p3" maxlength="4" onchange="setAuth()" onkeyup="onchange()" />
             </div>
             <div class="auth__number">
               <div id="sixNumber"></div>
@@ -50,23 +76,32 @@
             </div>
             <div class="auth__timer">
               <div id="timer"></div>
-              <button class="authFinish" disabled="true" id="authFinish">인증완료</button>
+              <button class="authFinish" disabled="true" id="authFinish" onclick="transmit()">
+                인증완료
+              </button>
             </div>
           </div>
           <div class="select__area">
-            <select>
-              <option disabled="true" selected="true">지역을 선택하세요</option>
-              <option>서울</option>
-              <option>경기</option>
-              <option>인천</option>
+            <select id="area">
+              <option disabled="true" selected="true" value="">지역을 선택하세요</option>
+              <option value="서울">서울</option>
+              <option value="경기">경기</option>
+              <option value="인천">인천</option>
             </select>
+            <div class="error" id="areaError"></div>
           </div>
           <div class="select__gender">
-            <input type="radio" name="gender" /> 여성 <input type="radio" name="gender" /> 남성
+            <div class="gender__set">
+              <input type="radio" name="gender" id="gender__woman" /> 여성
+              <input type="radio" name="gender" id="gender__man" /> 남성
+            </div>
+            <div class="error" id="genderError"></div>
           </div>
         </div>
         <div class="divideLine"></div>
-        <button class="signupButton" disabled="true">가입하다</button>
+        <button class="signupButton" disabled="true" id="signup" onclick="signup()">
+          가입하기
+        </button>
       </div>
     </div>
   </body>

@@ -53,6 +53,12 @@ body {
   flex-direction: column;
 }
 
+.input__login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .inputForm {
   width: 100%;
   height: 60px;
@@ -63,6 +69,17 @@ body {
   font-size: 16px;
   line-height: 24px;
   color: #797979;
+}
+
+.error {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  color: red;
+  font-size: 8px;
+  font-weight: 600;
+  padding-bottom: 10px;
 }
 
 .body__auth {
@@ -122,12 +139,17 @@ body {
 .select__gender {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gender__set {
+  display: flex;
   flex-direction: row;
-  justify-content: center;
   gap: 10px;
 }
 
-.select__gender input {
+.gender__set input {
   background: #ebebeb;
   border: 1px solid #d2d2d2;
 }
@@ -142,9 +164,6 @@ body {
   height: 75px;
   border-radius: 10px;
   font-size: 18px;
-  /* background: #ffffff;
-  border: 1px solid #0068ff;
-  color: #0068ff; */
   background: #f1f1f1;
   color: #8d8d8d;
 }
