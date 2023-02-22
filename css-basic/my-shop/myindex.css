@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", "돋움", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainBanner {
+  width: 100%;
+  height: 280px;
+  background-image: url("./img/banner.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainBanner .text {
+  font-size: 42px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  animation: titleText 1s ease-in-out;
+}
+
+.wrapper__body {
+  width: 100%;
+  max-width: 1320px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 10px;
+  margin-top: 20px;
+}
+
+.body__side {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.side__ul {
+  width: 170px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: orange;
+}
+
+.side__ul ul {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.side__ul ul li {
+  width: 100%;
+  padding-left: 10px;
+  list-style: none;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.side__ul ul li p {
+  transition: all 0.3s ease-in-out;
+}
+
+.side__ul ul li:hover {
+  cursor: pointer;
+  background-color: #df7e10;
+}
+
+.side__ul ul li:hover p {
+  transform: translateX(10%);
+}
+
+.writeBtnBox {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.writeBtn {
+  width: 100%;
+  color: white;
+  background-color: black;
+  border: 1px solid #000000;
+  padding: 10px 20px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.writeBtnBox .writeBtn {
+  transition: all 0.3s ease-in-out;
+}
+
+.writeBtnBox .writeBtn .arrow {
+  display: inline-block;
+  padding-left: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.writeBtnBox:hover .writeBtn {
+  background-color: white;
+  color: black;
+}
+
+.writeBtnBox:hover .writeBtn .arrow {
+  transform: translateX(270%);
+}
+
+.body__card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  padding-left: 15px;
+}
+
+/* aspect-ratio는 가로와 세로비율을 유지 하기 위해 쓰는 거 */
+.item {
+  width: calc(25% - 7px);
+  aspect-ratio: 6 / 5;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.imgBox {
+  width: 100%;
+  height: 100%;
+}
+
+.imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.textBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 20px;
+  z-index: 3;
+}
+
+.textBox p {
+  color: white;
+  margin: 5px 0 0;
+}
+
+.textBox__name {
+  font-size: 22px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.textBox__price {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.item:after {
+  content: "";
+  display: block;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+.item:hover:after {
+  opacity: 1;
+}
+
+.item:hover .imgBox img {
+  transform: scale(1.1);
+  filter: blur(3px);
+}
+
+.item:hover .textBox__name {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.item:hover .textBox__price {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.item:after,
+.item .imgBox img,
+.item .textBox__name,
+.item .textBox__price {
+  transition: all 0.4s ease-in-out;
+}
+
+.item .textBox__price {
+  transition: all 0.3s ease-in-out 0.15s;
+}
